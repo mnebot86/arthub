@@ -1,10 +1,9 @@
-import { Route } from 'react-router';
-import { useEffect, useState } from 'react';
-import { baseURL, config } from './services';
-import axios from 'axios';
-import NavBar from './components/NavBar';
-import './App.css';
-
+import { Route } from "react-router";
+import { useEffect, useState } from "react";
+import { baseURL, config } from "./services";
+import axios from "axios";
+import NavBar from "./components/NavBar";
+import "./App.css";
 
 function App() {
   const [galleries, setGalleries] = useState([]);
@@ -14,9 +13,9 @@ function App() {
     const fetchGalleries = async () => {
       const resp = await axios.get(baseURL, config);
       setGalleries(resp.data.records);
-    }
+    };
     fetchGalleries();
-  },[toggleFetch])
+  }, [toggleFetch]);
   return (
     <main>
       <header>
@@ -27,6 +26,14 @@ function App() {
       </Route>
       <Route path="/art">
         <h1>This is Art Gallery</h1>
+        {galleries
+          .filter((gallery) => gallery.fields.type === "art")
+          .map((gallery) => (
+            <div key={gallery.id}>
+              <img src={gallery.fields.image} />
+              <h3>gallery.fields.title</h3>
+            </div>
+          ))}
       </Route>
       <Route path="/photo">
         <h1>This is Photo Gallery</h1>
