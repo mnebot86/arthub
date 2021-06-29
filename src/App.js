@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { baseURL, config } from "./services";
 import axios from "axios";
 import NavBar from "./components/NavBar";
+import Home from "./components/Home";
 import "./App.css";
 
 function App() {
@@ -23,7 +24,7 @@ function App() {
         <NavBar />
       </header>
       <Route exact path="/">
-        <h1>This is Home!</h1>
+        <Home />
       </Route>
       <Route path="/art">
         <h1>This is Art Gallery</h1>
