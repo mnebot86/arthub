@@ -22,7 +22,7 @@ The wireframes below depict the homepage and review feed for arthub in web, tabl
 
 ## Component Hierarchy
 
-![imageAlt](read-pic/hierarchy.png)
+![imageAlt](ReadPic/chart.png)
 
 ## API and Data Sample
 
