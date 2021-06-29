@@ -8,10 +8,42 @@ a {
   text-decoration: none;
 }
 
+.art-container {
+  display: flex;
+  flex-wrap: wrap;
+  /* background-color: black; */
+  width: 100vw;
+  height: 100vh;
+}
+.art img {
+  width: 300px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 
+  0 1px 2px rgba(0,0,0,0.07),
+  0 2px 4px rgba(0,0,0,0.07),
+  0 4px 8px rgba(0,0,0,0.07),
+  0 8px 16px rgba(0,0,0,0.07),
+  0 16px 32px rgba(0,0,0,0.07),
+  0 32px 264px rgba(0,0,0,0.07);
+  
+}
 article {
   display: flex;
   flex-direction: column;
   width: 33vh;
+}
+
+.art iframe{
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 
+  0 1px 2px rgba(0,0,0,0.07),
+  0 2px 4px rgba(0,0,0,0.07),
+  0 4px 8px rgba(0,0,0,0.07),
+  0 8px 16px rgba(0,0,0,0.07),
+  0 16px 32px rgba(0,0,0,0.07),
+  0 32px 264px rgba(0,0,0,0.07);
 }
 
 li {
@@ -41,17 +73,17 @@ li {
   height: 100vh;
 }
 
-.home-para-container{ 
-  align-self:center;
+.home-para-container {
+  align-self: center;
   justify-self: center;
   width: 500px;
 }
 
 .home-para {
-line-height: 1.5em;
+  line-height: 1.5em;
 }
 .home-title {
-font-size: 30px;
+  font-size: 30px;
 }
 .home-title-container {
   align-self: center;
@@ -63,7 +95,7 @@ font-size: 30px;
 .nav-container {
   align-items: center;
   background-color: white;
-  border-bottom: 2px solid black ;
+  border-bottom: 2px solid black;
   flex-wrap: wrap;
   justify-content: space-between;
   display: flex;
@@ -79,6 +111,6 @@ font-size: 30px;
 .nav-title {
   padding-left: 20px;
 }
-ul:last-child { 
+ul:last-child {
   padding-right: 15px;
 }

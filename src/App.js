@@ -4,12 +4,14 @@ import { baseURL, config } from "./services";
 import axios from "axios";
 import NavBar from "./components/NavBar";
 import Home from "./components/Home";
+import Art from "./components/Art";
+import Photo from "./components/Photo";
+import Film from "./components/Film";
 import "./App.css";
 
 function App() {
   const [galleries, setGalleries] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
-  
 
   useEffect(() => {
     const fetchGalleries = async () => {
@@ -27,33 +29,43 @@ function App() {
         <Home />
       </Route>
       <Route path="/art">
-        <h1>This is Art Gallery</h1>
-        {galleries
-          .filter((gallery) => gallery.fields.type === "art")
-          .map((gallery) => (
-            <div key={gallery.id}>
-              <img src={gallery.fields.image} />
-              <h3>{gallery.fields.title}</h3>
-            </div>
-          ))}
+        <div className="art-container">
+          {galleries
+            .filter((gallery) => gallery.fields.type === "art")
+            .map((gallery) => (
+              <Art
+                key={gallery.id}
+                gallery={gallery}
+                setToggleFetch={setToggleFetch}
+              />
+            ))}
+        </div>
       </Route>
       <Route path="/photo">
-        <h1>This is Photo Gallery</h1>
-        {galleries.filter((gallery) => gallery.fields.type === 'photo').map((gallery) => (
-          <div key={gallery.id}>
-            <img src={gallery.fields.image} />
-            <h3>{gallery.fields.title}</h3>
-          </div>
-        ))}
+        <div className="art-container">
+          {galleries
+            .filter((gallery) => gallery.fields.type === "photo")
+            .map((gallery) => (
+              <Photo
+                key={gallery.id}
+                gallery={gallery}
+                setToggleFetch={setToggleFetch}
+              ></Photo>
+            ))}
+        </div>
       </Route>
       <Route path="/film">
-        <h1>This is Film Gallery</h1>
-        {galleries.filter((gallery) => gallery.fields.type === 'film').map((gallery) => (
-          <div>
-            <iframe src={gallery.fields.image} frameborder="0"></iframe>
-            <h3>{gallery.fields.title}</h3>
-          </div>
-        ))}
+        <div className="art-container">
+          {galleries
+            .filter((gallery) => gallery.fields.type === "film")
+            .map((gallery) => (
+              <Film
+                key={gallery.id}
+                gallery={gallery}
+                setToggleFetch={setToggleFetch}
+              ></Film>
+            ))}
+        </div>
       </Route>
       <Route path="share">
         <h1>This is Share Feed</h1>
