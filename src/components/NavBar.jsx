@@ -1,15 +1,30 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 function NavBar() {
-  return(
-    <div>
-      <Link to="/">Home</Link>
-      <Link to="/gallery">Gallery</Link>
-      <Link to="art">Art</Link>
-      <Link to="photo">Photo</Link>
-      <Link to="film">Film</Link>
-      <Link to="share">Share</Link>
+  return (
+    <div className="nav-container">
+      <div className="title">
+        <h1>artHUB</h1>
+      </div>
+      <ul className="nav-links">
+        <li>
+          <Link to="/">Home</Link>{" "}
+        </li>
+        <li>
+          <Link to="art">Art</Link>{" "}
+        </li>
+        <li>
+          <Link to="photo">Photo</Link>
+        </li>
+        <li>
+          <Link to="film">Film</Link>
+        </li>
+        <li>
+          <Link to="share">Share</Link>
+        </li>
+      </ul>
     </div>
-  )
+  );
 }
+
 export default NavBar;
