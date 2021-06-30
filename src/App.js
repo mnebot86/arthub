@@ -7,7 +7,7 @@ import Home from "./components/Home";
 import Art from "./components/Art";
 import Photo from "./components/Photo";
 import Film from "./components/Film";
-import Showcase from "./Showcase";
+import Showcase from "./components/Showcase";
 import "./App.css";
 
 function App() {
@@ -73,7 +73,7 @@ function App() {
       </Route>
       <Route path="/showcase/:id">
         <h1>Showcase</h1>
-        <Showcase gallery={galleries} setToggleFetch={setToggleFetch}/>
+        <Showcase galleries={galleries} setToggleFetch={setToggleFetch}/>
       </Route>
       <footer>
         <h1>My Footer</h1>
