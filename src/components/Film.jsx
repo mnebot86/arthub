@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 const Film = (props) => {
   return (
     <div className="art">
-      <iframe src={props.gallery.fields.image} frameborder="0"></iframe>
+      <Link to={`/showcase/${props.gallery.id}`}>
+        <iframe src={props.gallery.fields.image} allow="fullscreen" frameborder="0"></iframe>
+      </Link>
     </div>
   );
 };

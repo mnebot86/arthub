@@ -1,21 +1,24 @@
+import view from "../art-image/view.png";
+import like from "../art-image/likes.png";
 import { useParams } from "react-router-dom";
 
 const Showcase = (props) => {
   const params = useParams();
-  const gallery = props.galleries.find((gallery) => gallery.id === params.id)
-
-  console.log(props.galleries)
-  //first get the id from params
-  // then look through all of the items in galleries to see which one has ids matches the params.id
-  // destruction image and title out of gallery 
-  if(!gallery) {
-    return `Loading`
+  const gallery = props.galleries.find((gallery) => gallery.id === params.id);
+  if (!gallery) {
+    return `Loading`;
   }
-  const { image, title } = gallery.fields;
+  const { image, title, views, likes, artist } = gallery.fields;
+
   return (
-    <div>
-      <img src={image} alt="" />
-      <h3>{title}</h3>
+    <div className="showcase-container">
+      <div className='card'>
+      <img src={image} alt="selected image" />
+      <p><img id='logo' className="inline" src={view} alt="" />{views} <img id='logo' className="inline" src={like} alt="" />{likes}</p>
+      <h3>Name: {title}</h3>
+      <h3>By: {artist}</h3>
+      </div>
+
     </div>
   );
 };
