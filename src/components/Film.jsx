@@ -4,7 +4,7 @@ const Film = (props) => {
   return (
     <div className="art">
       <Link to={`/showcase/${props.gallery.id}`}>
-        <iframe src={props.gallery.fields.image} allow="fullscreen" frameborder="0"></iframe>
+        <iframe src={props.gallery.fields.video} allow="fullscreen" frameborder="0"></iframe>
       </Link>
     </div>
   );

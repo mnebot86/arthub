@@ -69,15 +69,15 @@ function App() {
             ))}
         </div>
       </Route>
-      <Route path="share">
+      <Route path="/share/:id">
         <h1>This is Share Feed</h1>
-        <Share />
+        <Share galleries={galleries} setToggleFetch={setToggleFetch}/>
       </Route>
       <Route path="/showcase/:id">
         <Showcase galleries={galleries} setToggleFetch={setToggleFetch} />
       </Route>
       <footer>
-        <h1>My Footer</h1>
+        {/* <h1>My Footer</h1> */}
       </footer>
     </main>
   );

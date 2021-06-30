@@ -11,16 +11,16 @@ function NavBar() {
           <Link to="/">Home</Link>{" "}
         </li>
         <li>
-          <Link to="art">Art</Link>{" "}
+          <Link to="/art">Art</Link>{" "}
         </li>
         <li>
-          <Link to="photo">Photo</Link>
+          <Link to="/photo">Photo</Link>
         </li>
         <li>
-          <Link to="film">Film</Link>
+          <Link to="/film">Film</Link>
         </li>
         <li>
-          <Link to="share">Share</Link>
+          <Link to="/share/:type">Share</Link>
         </li>
       </ul>
     </div>
