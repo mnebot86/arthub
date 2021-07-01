@@ -45,9 +45,24 @@ article {
   height: fit-content;
 
 }
+form {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 10vh auto;
+  padding: 1vh 20vh;
+  text-align: center;
+  width: 80vw;
+  height: 50vh;
+}
 
 .inline {
   display: inline;
+}
+input {
+  text-align: center;
+  font-size: 2rem;
 }
 li {
   margin: 0 5px;
@@ -128,8 +143,11 @@ li {
   width: fit-content;
 }
 .showcase-container p {
+  display:flex;
+  justify-content: space-between;
   font-size: 40px;
-  width: fit-content;
+  max-width: 75%;
+  max-height: 75%;
 }
 .nav-container {
   align-items: center;

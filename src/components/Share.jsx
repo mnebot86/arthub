@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { baseURL, config } from "../services";
 
 const Share = (props) => {
@@ -27,23 +27,26 @@ const Share = (props) => {
 
   return (
     <form onSubmit={handSubmit}>
-      <label htmlFor="title">Title: </label>
-      <input
+      
+      <input 
+        placeholder='Title'
         type="text"
         id="title"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
-      <label htmlFor="artist">Artist: </label>
+      
       <input
+        placeholder="Artist"
         type="text"
         id="artist"
         value={artist}
         onChange={(e) => setArtist(e.target.value)}
       />
-      <label htmlFor="url">URL: </label>
+      
       <input
-        type="text"
+        placeholder='URL'
+        type="url"
         id="url"
         value={url}
         onChange={(e) => setURL(e.target.value)}
@@ -55,6 +58,7 @@ const Share = (props) => {
         <option value={category}>film</option>
       </select> */}
       <input
+        placeholder='Art/Photo/Film?'
         type="text"
         id="category"
         placeholder="Art/Photo/Film?"
