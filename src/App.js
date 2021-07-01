@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     const fetchGalleries = async () => {
-      const resp = await axios.get(baseURL, config);
+      const resp = await axios.get(`${baseURL}/gallery`, config);
       setGalleries(resp.data.records);
     };
     fetchGalleries();

@@ -6,8 +6,6 @@ import { baseURL, config } from "../services";
 import axios from "axios";
 
 const Showcase = (props) => {
-  // const [likeCount, setLikeCount] = useState(false);
-  const [viewCount, setViewCount] = useState(0);
   const [viewed, setViewed] = useState(false);
   const [liked, setLiked] = useState(false);
 
@@ -21,7 +19,7 @@ const Showcase = (props) => {
         const fields = { views: gallery.fields.views + 1 };
         console.log(fields);
         if (params.id) {
-          const update = `${baseURL}/${params.id}`;
+          const update = `${baseURL}/gallery/${params.id}`;
           await axios.patch(update, { fields }, config);
           setViewed(true);
           props.setToggleFetch((curr) => !curr);
@@ -38,7 +36,7 @@ const Showcase = (props) => {
       const fields = { likes: gallery.fields.likes + 1 };
       console.log(fields);
       if (params.id) {
-        const update = `${baseURL}/${params.id}`;
+        const update = `${baseURL}/gallery/${params.id}`;
         await axios.patch(update, { fields }, config);
         setLiked(true);
         props.setToggleFetch((curr) => !curr);
@@ -46,24 +44,14 @@ const Showcase = (props) => {
     }
   };
 
+  //If Image can't be found. It will put Loading on screen.
   if (!gallery) {
     return `Loading`;
   }
   const { image, title, views, likes, artist, video } = gallery.fields;
-  // console.log(views + 1)
-  // const handleClick = async () => {
-
-  // }
-
-  const loadHandle = () => {
-    // increments by one when image loads
-    setViewCount(viewCount + 1);
-    console.log(`Page has Loaded`);
-  };
-
   return (
     <div className="showcase-container">
-      <div onLoad={loadHandle} className="card">
+      <div className="card">
         <h3>Name: {title}</h3>
         <h3>By: {artist}</h3>
         {image ? (
@@ -71,12 +59,14 @@ const Showcase = (props) => {
         ) : (
           <iframe src={video} allow="fullscreen" frameborder="0"></iframe>
         )}
+        {/* Renders View and Number Icons */}
         <p>
           <div>
             <img id="logo" className="inline" src={view} alt="" />
-            {views}
+            {views} 
           </div>
           <div>
+            {/* Renders Like Icon with Number */}
             <img
               id="logo"
               className="inline"

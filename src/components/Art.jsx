@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+
 const Art = (props) => {
   return (
     <div class="art">
