@@ -49,12 +49,22 @@ form {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
+  height: 45vh;
   justify-content: space-around;
   margin: 10vh auto;
-  padding: 1vh 20vh;
+  padding: 2vh 20vh;
   text-align: center;
-  width: 80vw;
-  height: 50vh;
+  width: 40vw;
+}
+
+form button {
+  align-self:center;
+  background-color: blue;
+  border-radius: 6px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 15vw;
 }
 
 .inline {

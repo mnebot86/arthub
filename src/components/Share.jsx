@@ -65,7 +65,7 @@ const Share = (props) => {
         value={category}
         onChange={(e) => setCategory(e.target.value)}
       />
-      <button type="submit">Upload</button>
+      <button type="submit">Submit</button>
     </form>
   );
 };
