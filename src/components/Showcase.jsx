@@ -10,10 +10,10 @@ const Showcase = (props) => {
   const [liked, setLiked] = useState(false);
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
-  
+
   const params = useParams();
   const gallery = props.galleries.find((gallery) => gallery.id === params.id);
-  
+
   useEffect(() => {
     const updateViews = async () => {
       // ON mounting the views goes up by 1 then patches to Airtable
@@ -28,10 +28,10 @@ const Showcase = (props) => {
         }
       }
     };
-    
+
     updateViews();
   }, [props.galleries]);
-  
+
   const handleClick = async () => {
     // Listen for onClick on Like button and increments it by one. Updates AirTable with axios.patch. Then re-renders.
     if (props.galleries.length && !liked) {
@@ -51,21 +51,18 @@ const Showcase = (props) => {
   }
   const { image, title, views, likes, artist, video, comments } =
     gallery.fields;
-  
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const newComment = {
       content: comment,
       author: name,
       gallery: [gallery.id],
-      
     };
     await axios.post(`${baseURL}/comments`, { fields: newComment }, config);
     props.setToggleFetch((curr) => !curr);
-    
   };
 
-  
   return (
     <div className="showcase-container">
       <div className="card">
@@ -73,9 +70,9 @@ const Showcase = (props) => {
         <h3>By: {artist}</h3>
         {image ? (
           <img src={image} alt="selected image" />
-          ) : (
-            <iframe src={video} allow="fullscreen" frameborder="0"></iframe>
-            )}
+        ) : (
+          <iframe src={video} allow="fullscreen" frameborder="0"></iframe>
+        )}
         {/* Renders View and Number Icons */}
         <p>
           <div>
@@ -90,38 +87,40 @@ const Showcase = (props) => {
               src={like}
               alt=""
               onClick={() => handleClick()}
-              />
+            />
             {likes}
           </div>
         </p>
       </div>
-      <div>
+      <div id="comment-window">
         {comments.map((comment) => (
           <p key={comment.id}>
-            {comment.fields.author} {comment.fields.content}
+            <strong>{comment.fields.author}</strong> ~
+             <em>{comment.fields.content}</em>
           </p>
         ))}
+      </div>
         <div>
-          <form onSubmit={handleSubmit}>
+          <form id="comment-form" onSubmit={handleSubmit}>
             <input
+              required
               type="text"
               placeholder="Name"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              />
+            />
             <input
+              required
               type="text"
               placeholder="Comment"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
-              />
+            />
             <button>Send It</button>
           </form>
         </div>
-      </div>
     </div>
   );
 };
-
 
 export default Showcase;

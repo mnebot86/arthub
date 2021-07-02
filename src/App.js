@@ -9,6 +9,7 @@ import Photo from "./components/Photo";
 import Film from "./components/Film";
 import Showcase from "./components/Showcase";
 import Share from "./components/Share";
+import Footer from "./components/Footer";
 import "./App.css";
 
 function App() {
@@ -97,7 +98,7 @@ function App() {
         <Showcase galleries={galleries} setToggleFetch={setToggleFetch} />
         
       </Route>
-      <footer>{/* <h1>My Footer</h1> */}</footer>
+      <Footer />
     </main>
   );
 }
