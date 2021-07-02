@@ -209,7 +209,7 @@ main {
   /* grid-area: 'Text'; */
   width: fit-content;
 }
-.showcase-container p {
+.logo-container {
   display:flex;
   justify-content: space-between;
   font-size: 40px;

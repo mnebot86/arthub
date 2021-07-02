@@ -1,5 +1,3 @@
-import pen from "../art-image/color-pens.jpeg";
-import camera from "../art-image/hand-in-camera.jpeg";
 import React from "react";
 
 const Home = () => {

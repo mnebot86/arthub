@@ -69,12 +69,12 @@ const Showcase = (props) => {
         <h3>Name: {title}</h3>
         <h3>By: {artist}</h3>
         {image ? (
-          <img src={image} alt="selected image" />
+          <img src={image}  alt="awesome" />
         ) : (
-          <iframe src={video} allow="fullscreen" frameborder="0"></iframe>
+          <iframe src={video} title="Great" allow="fullscreen" frameborder="0"></iframe>
         )}
         {/* Renders View and Number Icons */}
-        <p>
+        <div className='logo-container'>
           <div>
             <img id="logo" className="inline" src={view} alt="" />
             {views}
@@ -90,7 +90,7 @@ const Showcase = (props) => {
             />
             {likes}
           </div>
-        </p>
+        </div>
       </div>
       <div id="comment-window">
         {comments.map((comment) => (

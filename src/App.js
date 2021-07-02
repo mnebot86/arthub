@@ -14,7 +14,6 @@ import "./App.css";
 
 function App() {
   const [galleries, setGalleries] = useState([]);
-  // const [comments, setComments] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
 
   useEffect(() => {
@@ -42,7 +41,7 @@ function App() {
       setGalleries(linkComment);
     };
     fetchGalleriesAndComments();
-  }, [toggleFetch]);
+  }, [toggleFetch, galleries]);
 
   return (
     <main>

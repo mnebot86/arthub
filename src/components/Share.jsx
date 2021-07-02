@@ -58,7 +58,6 @@ const Share = (props) => {
         <option value={category}>film</option>
       </select> */}
       <input className='share'
-        placeholder='Art/Photo/Film?'
         type="text"
         id="category"
         placeholder="Art/Photo/Film?"

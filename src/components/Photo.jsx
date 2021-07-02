@@ -4,7 +4,7 @@ const Photo = (props) => {
   return (
     <div className="art">
       <Link to={`/showcase/${props.gallery.id}`}>
-      <img src={props.gallery.fields.image} />
+      <img src={props.gallery.fields.image} alt="beautiful"/>
       </Link>
     </div>
   );
