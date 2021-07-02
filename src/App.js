@@ -21,10 +21,6 @@ function App() {
       const resp = await axios.get(`${baseURL}/gallery`, config);
       const commentsResp = await axios.get(`${baseURL}/comments`, config);
       const comments = commentsResp.data.records;
-
-      // setGalleries(resp.data.records);
-      console.log(`Yoo`, galleries);
-      console.log(comments);
       const linkComment = resp.data.records.map((gallery) => {
         return {
           ...gallery,
@@ -95,7 +91,6 @@ function App() {
       </Route>
       <Route path="/showcase/:id">
         <Showcase galleries={galleries} setToggleFetch={setToggleFetch} />
-        
       </Route>
       <Footer />
     </main>

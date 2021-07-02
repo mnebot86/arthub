@@ -11,32 +11,32 @@ const Showcase = (props) => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
+
   const params = useParams();
-  const gallery = props.galleries.find((gallery) => gallery.id === params.id);
+  const {setToggleFetch, galleries} = props
+  const gallery = galleries.find((gallery) => gallery.id === params.id);
 
   useEffect(() => {
     const updateViews = async () => {
       // ON mounting the views goes up by 1 then patches to Airtable
-      if (props.galleries.length && !viewed) {
+      if (galleries.length && !viewed) {
         const fields = { views: gallery.fields.views + 1 };
-        console.log(fields);
         if (params.id) {
           const update = `${baseURL}/gallery/${params.id}`;
           await axios.patch(update, { fields }, config);
           setViewed(true);
-          props.setToggleFetch((curr) => !curr);
+          setToggleFetch((curr) => !curr);
         }
       }
     };
 
     updateViews();
-  }, [props.galleries]);
+  }, [galleries, params.id, setToggleFetch, viewed, gallery.fields.views]);
 
   const handleClick = async () => {
     // Listen for onClick on Like button and increments it by one. Updates AirTable with axios.patch. Then re-renders.
     if (props.galleries.length && !liked) {
       const fields = { likes: gallery.fields.likes + 1 };
-      console.log(fields);
       if (params.id) {
         const update = `${baseURL}/gallery/${params.id}`;
         await axios.patch(update, { fields }, config);
@@ -69,12 +69,17 @@ const Showcase = (props) => {
         <h3>Name: {title}</h3>
         <h3>By: {artist}</h3>
         {image ? (
-          <img src={image}  alt="awesome" />
+          <img src={image} alt="awesome" />
         ) : (
-          <iframe src={video} title="Great" allow="fullscreen" frameborder="0"></iframe>
+          <iframe
+            src={video}
+            title="Great"
+            allow="fullscreen"
+            frameborder="0"
+          ></iframe>
         )}
         {/* Renders View and Number Icons */}
-        <div className='logo-container'>
+        <div className="logo-container">
           <div>
             <img id="logo" className="inline" src={view} alt="" />
             {views}
@@ -96,29 +101,29 @@ const Showcase = (props) => {
         {comments.map((comment) => (
           <p key={comment.id}>
             <strong>{comment.fields.author}</strong> ~
-             <em>{comment.fields.content}</em>
+            <em>{comment.fields.content}</em>
           </p>
         ))}
       </div>
-        <div>
-          <form id="comment-form" onSubmit={handleSubmit}>
-            <input
-              required
-              type="text"
-              placeholder="Name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              required
-              type="text"
-              placeholder="Comment"
-              value={comment}
-              onChange={(e) => setComment(e.target.value)}
-            />
-            <button>Send It</button>
-          </form>
-        </div>
+      <div>
+        <form id="comment-form" onSubmit={handleSubmit}>
+          <input
+            required
+            type="text"
+            placeholder="Name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+          />
+          <input
+            required
+            type="text"
+            placeholder="Comment"
+            value={comment}
+            onChange={(e) => setComment(e.target.value)}
+          />
+          <button>Send It</button>
+        </form>
+      </div>
     </div>
   );
 };

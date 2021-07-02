@@ -2,7 +2,8 @@ import React from "react";
 
 const Home = () => {
   return (
-    <article>
+    <article id="home-container">
+      <div className="home-word-wrap">
       <h1>
         Welcome To The Hub!
       </h1>
@@ -15,8 +16,10 @@ const Home = () => {
         strong and welcoming community. Feel free to post, like and comment on
         each others art work!
       </p>
+      </div>
     </article>
   );
 };
+
 
 export default Home;
