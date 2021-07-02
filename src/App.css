@@ -45,7 +45,8 @@ article {
   height: fit-content;
 
 }
-form {
+
+#share-form {
   border: 2px solid black;
   display: flex;
   flex-direction: column;
@@ -57,7 +58,7 @@ form {
   width: 40vw;
 }
 
-form button {
+#share-form button {
   align-self:center;
   background-color: blue;
   border-radius: 6px;
@@ -70,7 +71,7 @@ form button {
 .inline {
   display: inline;
 }
-input {
+.share {
   text-align: center;
   font-size: 2rem;
 }

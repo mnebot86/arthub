@@ -13,15 +13,36 @@ import "./App.css";
 
 function App() {
   const [galleries, setGalleries] = useState([]);
+  // const [comments, setComments] = useState([]);
   const [toggleFetch, setToggleFetch] = useState(true);
 
   useEffect(() => {
-    const fetchGalleries = async () => {
+    const fetchGalleriesAndComments = async () => {
       const resp = await axios.get(`${baseURL}/gallery`, config);
-      setGalleries(resp.data.records);
+      const commentsResp = await axios.get(`${baseURL}/comments`, config);
+      const comments = commentsResp.data.records;
+
+      // setGalleries(resp.data.records);
+      console.log(`Yoo`, galleries);
+      console.log(comments);
+      const linkComment = resp.data.records.map((gallery) => {
+        return {
+          ...gallery,
+          fields: {
+            ...gallery.fields,
+            comments: gallery.fields.comments
+              ? comments.filter((comment) =>
+                  gallery.fields.comments.includes(comment.id)
+                )
+              : [],
+          },
+        };
+      });
+      setGalleries(linkComment);
     };
-    fetchGalleries();
+    fetchGalleriesAndComments();
   }, [toggleFetch]);
+
   return (
     <main>
       <header>
@@ -74,6 +95,7 @@ function App() {
       </Route>
       <Route path="/showcase/:id">
         <Showcase galleries={galleries} setToggleFetch={setToggleFetch} />
+        
       </Route>
       <footer>{/* <h1>My Footer</h1> */}</footer>
     </main>

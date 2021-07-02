@@ -8,10 +8,12 @@ import axios from "axios";
 const Showcase = (props) => {
   const [viewed, setViewed] = useState(false);
   const [liked, setLiked] = useState(false);
-
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+  
   const params = useParams();
   const gallery = props.galleries.find((gallery) => gallery.id === params.id);
-
+  
   useEffect(() => {
     const updateViews = async () => {
       // ON mounting the views goes up by 1 then patches to Airtable
@@ -26,10 +28,10 @@ const Showcase = (props) => {
         }
       }
     };
-
+    
     updateViews();
   }, [props.galleries]);
-
+  
   const handleClick = async () => {
     // Listen for onClick on Like button and increments it by one. Updates AirTable with axios.patch. Then re-renders.
     if (props.galleries.length && !liked) {
@@ -43,12 +45,27 @@ const Showcase = (props) => {
       }
     }
   };
-
   //If Image can't be found. It will put Loading on screen.
   if (!gallery) {
     return `Loading`;
   }
-  const { image, title, views, likes, artist, video } = gallery.fields;
+  const { image, title, views, likes, artist, video, comments } =
+    gallery.fields;
+  
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const newComment = {
+      content: comment,
+      author: name,
+      gallery: [gallery.id],
+      
+    };
+    await axios.post(`${baseURL}/comments`, { fields: newComment }, config);
+    props.setToggleFetch((curr) => !curr);
+    
+  };
+
+  
   return (
     <div className="showcase-container">
       <div className="card">
@@ -56,14 +73,14 @@ const Showcase = (props) => {
         <h3>By: {artist}</h3>
         {image ? (
           <img src={image} alt="selected image" />
-        ) : (
-          <iframe src={video} allow="fullscreen" frameborder="0"></iframe>
-        )}
+          ) : (
+            <iframe src={video} allow="fullscreen" frameborder="0"></iframe>
+            )}
         {/* Renders View and Number Icons */}
         <p>
           <div>
             <img id="logo" className="inline" src={view} alt="" />
-            {views} 
+            {views}
           </div>
           <div>
             {/* Renders Like Icon with Number */}
@@ -73,13 +90,38 @@ const Showcase = (props) => {
               src={like}
               alt=""
               onClick={() => handleClick()}
-            />
+              />
             {likes}
           </div>
         </p>
       </div>
+      <div>
+        {comments.map((comment) => (
+          <p key={comment.id}>
+            {comment.fields.author} {comment.fields.content}
+          </p>
+        ))}
+        <div>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              />
+            <input
+              type="text"
+              placeholder="Comment"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
+              />
+            <button>Send It</button>
+          </form>
+        </div>
+      </div>
     </div>
   );
 };
+
 
 export default Showcase;

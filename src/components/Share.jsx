@@ -26,9 +26,9 @@ const Share = (props) => {
   };
 
   return (
-    <form onSubmit={handSubmit}>
+    <form id='share-form' onSubmit={handSubmit}>
       
-      <input 
+      <input className='share'
         placeholder='Title'
         type="text"
         id="title"
@@ -36,7 +36,7 @@ const Share = (props) => {
         onChange={(e) => setTitle(e.target.value)}
       />
       
-      <input
+      <input className='share'
         placeholder="Artist"
         type="text"
         id="artist"
@@ -44,7 +44,7 @@ const Share = (props) => {
         onChange={(e) => setArtist(e.target.value)}
       />
       
-      <input
+      <input className='share'
         placeholder='URL'
         type="url"
         id="url"
@@ -57,7 +57,7 @@ const Share = (props) => {
         <option value={category}>photo</option>
         <option value={category}>film</option>
       </select> */}
-      <input
+      <input className='share'
         placeholder='Art/Photo/Film?'
         type="text"
         id="category"
