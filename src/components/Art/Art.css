@@ -1,7 +1,10 @@
 .art-container {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
   height: auto;
+  justify-content: center;
+  overflow: scroll;
   width: 100vw;
 }
 
@@ -13,3 +16,6 @@
   margin: 2.41vw;
   width: 41.95vh;
 }
+
+
+

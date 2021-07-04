@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import './Art.css'
+import "./Art.css";
 const Art = (props) => {
   return (
-    <div class="art">
+    <div className="art">
       <Link to={`/showcase/${props.gallery.id}`}>
-      <img src={props.gallery.fields.image} alt="selected art"/>
+        <img src={props.gallery.fields.image} alt="selected art" />
       </Link>
     </div>
   );

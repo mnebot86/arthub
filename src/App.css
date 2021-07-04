@@ -9,7 +9,7 @@ body {
   background: inherit;
   position: relative;
   min-height: calc(100vh-80px);
-  overflow: hidden;
+  /* overflow: hidden; */
   padding-bottom: 56px;
 }
 
@@ -17,5 +17,5 @@ body {
 
 html {
   height: 100%;
-  overflow: hidden;
+  /* overflow: hidden; */
 }

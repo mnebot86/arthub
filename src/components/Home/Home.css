@@ -8,6 +8,7 @@ article {
   height: 88vh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
   width: 100vw;
 }
 
@@ -23,7 +24,6 @@ article {
   margin-top: 5px;
   font-size: 50px;
   font-weight: bold;
-  color: black;
 }
 
 .home-word-wrap {
