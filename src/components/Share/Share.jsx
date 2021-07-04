@@ -1,7 +1,8 @@
 import axios from "axios";
 import { useState } from "react";
 import { useHistory } from "react-router";
-import { baseURL, config } from "../services";
+import { baseURL, config } from "../../services";
+import "./Share.css"
 
 const Share = (props) => {
   const [title, setTitle] = useState("");

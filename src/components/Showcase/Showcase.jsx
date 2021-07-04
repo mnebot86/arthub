@@ -1,9 +1,10 @@
-import view from "../art-image/view.png";
-import like from "../art-image/likes.png";
+import view from "../../art-image/view.png";
+import like from "../../art-image/likes.png";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { baseURL, config } from "../services";
+import { baseURL, config } from "../../services";
 import axios from "axios";
+import "./Showcase.css";
 
 const Showcase = (props) => {
   const [viewed, setViewed] = useState(false);

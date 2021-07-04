@@ -1,0 +1,26 @@
+#share-form {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  height: 45vh;
+  justify-content: space-around;
+  margin: 10vh auto;
+  padding: 2vh 20vh;
+  text-align: center;
+  width: 40vw;
+}
+
+#share-form button {
+  align-self: center;
+  background-color: blue;
+  border-radius: 6px;
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  width: 15vw;
+}
+
+.share {
+  text-align: center;
+  font-size: 2rem;
+}

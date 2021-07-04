@@ -1,0 +1,61 @@
+article {
+  background-image: url(../../art-image/redball.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+}
+
+.home-container {
+  position: relative;
+}
+
+.home-container h1 {
+  color: black;
+  font-size: 70px;
+}
+#home-container p {
+  margin-top: 5px;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+.home-word-wrap {
+  position: absolute;
+  top: 25%;
+  left: 30%;
+  width: 45%;
+}
+
+@media only screen and (max-width: 600px) {
+  article {
+    height: 83vh;
+  }
+
+  .home-container {
+    position: static;
+  }
+
+  .home-container h1 {
+    font-size: 25px;
+  }
+
+  .home-container p {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .home-word-wrap {
+    height: 0;
+    margin: 20% auto;
+    position: static;
+    text-align: justify;
+    width: 90%;
+  }
+}

@@ -1,8 +1,9 @@
+import './Home.css'
 import React from "react";
 
 const Home = () => {
   return (
-    <article id="home-container">
+    <article className="home-container">
       <div className="home-word-wrap">
       <h1>
         Welcome To The Hub!

@@ -2,14 +2,14 @@ import { Route } from "react-router";
 import { useEffect, useState } from "react";
 import { baseURL, config } from "./services";
 import axios from "axios";
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-import Art from "./components/Art";
-import Photo from "./components/Photo";
-import Film from "./components/Film";
-import Showcase from "./components/Showcase";
-import Share from "./components/Share";
-import Footer from "./components/Footer";
+import NavBar from "./components/NavBar/NavBar";
+import Home from "./components/Home/Home";
+import Art from "./components/Art/Art";
+import Photo from "./components/Photo/Photo";
+import Film from "./components/Film/Film";
+import Showcase from "./components/Showcase/Showcase"
+import Share from "./components/Share/Share";
+import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
