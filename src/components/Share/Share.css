@@ -2,7 +2,7 @@
   border: 2px solid black;
   display: flex;
   flex-direction: column;
-  height: 45vh;
+  height: 65vh;
   justify-content: space-around;
   margin: 10vh auto;
   padding: 2vh 20vh;
@@ -25,32 +25,23 @@
   font-size: 2rem;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1800px) {
   #share-form {
-    border: 2px solid black;
-    display: flex;
-    flex-direction: column;
-    height: 62vh;
-    justify-content: space-around;
-    margin: 10vh auto;
+    
+    height: 63vh;
     padding: 2vh 5vh;
     text-align: center;
     width: 95vw;
   }
 
   #share-form button {
-    align-self: center;
-    background-color: blue;
-    border-radius: 6px;
-    color: white;
     font-size: .75rem;
-    font-weight: bold;
     padding: 1.5vh;
     width: 30vw;
   }
 
   .share {
     text-align: center;
-    font-size: 12px;
+    font-size: 1.5rem;
   }
 }

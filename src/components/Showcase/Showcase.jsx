@@ -12,9 +12,8 @@ const Showcase = (props) => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
 
-
   const params = useParams();
-  const {setToggleFetch, galleries} = props
+  const { setToggleFetch, galleries } = props;
   const gallery = galleries.find((gallery) => gallery.id === params.id);
 
   useEffect(() => {
@@ -106,25 +105,23 @@ const Showcase = (props) => {
           </p>
         ))}
       </div>
-      <div>
-        <form id="comment-form" onSubmit={handleSubmit}>
-          <input
-            required
-            type="text"
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            required
-            type="text"
-            placeholder="Comment"
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-          />
-          <button>Send It</button>
-        </form>
-      </div>
+      <form id="comment-form" onSubmit={handleSubmit}>
+        <input
+          required
+          type="text"
+          placeholder="Name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <input
+          required
+          type="text"
+          placeholder="Comment"
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+        />
+        <button>Send It</button>
+      </form>
     </div>
   );
 };

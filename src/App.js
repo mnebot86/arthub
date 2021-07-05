@@ -92,7 +92,7 @@ function App() {
       <Route path="/showcase/:id">
         <Showcase galleries={galleries} setToggleFetch={setToggleFetch} />
       </Route>
-      <Footer />
+      {/* <Footer /> */}
     </main>
   );
 }
