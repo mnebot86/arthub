@@ -1,30 +1,60 @@
 import { Link } from "react-router-dom";
-import "./NavBar.css"
+import { useEffect, useState } from "react";
+import { faHamburger } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "./NavBar.css";
 
 function NavBar() {
+  const [visible, setVisible] = useState(true);
+  const [hamburger, setHamburger] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 425) {
+        setVisible(true);
+        setHamburger(false);
+      } else {
+        setVisible(false);
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
-    <div className="nav-container">
+    <header>
       <div className="nav-title">
         <h1>artHUB</h1>
       </div>
-      <ul className="nav-links">
-        <li>
-          <Link to="/">Home</Link>{" "}
-        </li>
-        <li>
-          <Link to="/art">Art</Link>{" "}
-        </li>
-        <li>
-          <Link to="/photo">Photo</Link>
-        </li>
-        <li>
-          <Link to="/film">Film</Link>
-        </li>
-        <li>
-          <Link to="/share/:type">Share</Link>
-        </li>
-      </ul>
-    </div>
+      <FontAwesomeIcon
+        icon={faHamburger}
+        onClick={() => setHamburger(!hamburger)}
+      />
+      <nav
+        className="nav-container"
+        style={{ display: visible || hamburger ? "flex" : "none" }}
+      >
+        <ul className="nav-links">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/art">Art</Link>
+          </li>
+          <li>
+            <Link to="/photo">Photo</Link>
+          </li>
+          <li>
+            <Link to="/film">Film</Link>
+          </li>
+          <li>
+            <Link to="/share/:type">Share</Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
   );
 }
 

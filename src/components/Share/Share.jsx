@@ -19,7 +19,7 @@ const Share = (props) => {
       image: url,
       type: category,
     };
-    await axios.post(baseURL, { fields: newArt }, config);
+    await axios.post(`${baseURL}/gallery`, { fields: newArt }, config);
     props.setToggleFetch((curr) => !curr);
     setTimeout(() => {
       history.push(`/${category}`);
@@ -68,6 +68,7 @@ const Share = (props) => {
       </select> */}
       <input className='share'
         type="text"
+        style={{textTransform: "lowercase"}}
         id="category"
         placeholder="Art/Photo/Film?"
         value={category}

@@ -37,7 +37,7 @@ function App() {
       setGalleries(linkComment);
     };
     fetchGalleriesAndComments();
-  }, [toggleFetch, galleries]);
+  }, [toggleFetch]);
 
   return (
     <main>

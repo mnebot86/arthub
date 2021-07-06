@@ -5,17 +5,14 @@
   padding: 0;
 }
 
-body {
-  background: inherit;
-  position: relative;
-  min-height: calc(100vh-80px);
-  /* overflow: hidden; */
-  padding-bottom: 56px;
+body{
+  background-image: url(./art-image/redball.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
 }
 
 
 
-html {
-  height: 100%;
-  /* overflow: hidden; */
-}
+

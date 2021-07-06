@@ -51,7 +51,7 @@
   flex-direction: column;
   grid-area: window;
   height: 60vh;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   margin: 10vh 0 0 0;
   overflow-x: scroll;
   width: 25vw;
@@ -89,14 +89,13 @@ li {
 
 .showcase-container {
   width: 100vw;
-  min-height: 100%;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(2, 1fr);
   grid-template-areas:
     "image image image image window window"
     "image image image image   form form";
-  height: 30vh;
+  height: 100vh;
 }
 
 .showcase-container img {
@@ -224,7 +223,6 @@ strong {
   #comment-window {
     padding: 20px;
     margin: 3vh auto 0 auto;
-
     width: 95vw;
   }
 

@@ -6,21 +6,30 @@ a {
 a:hover {
   color: red;
 }
+.fa-hamburger {
+  display: none;
+}
 
+header {
+  background: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+}
 .nav-container {
   align-items: center;
   background-color: white;
   border-bottom: 2px solid black;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: space-between;
-  width: 100vw;
+  justify-content: flex-end;
 }
 
 .nav-links {
   display: flex;
   font-size: 30px;
-  justify-content: space-between;
+  justify-content: flex-end;
   list-style-type: none;
   
 }
@@ -69,6 +78,10 @@ li{
     font-size:12px;
     padding: 0 5px;
   }
+  .fa-hamburger {
+    display: inline;
+  }
+  
   
 }
 
