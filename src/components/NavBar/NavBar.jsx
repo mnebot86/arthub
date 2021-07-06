@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { faHamburger } from "@fortawesome/free-solid-svg-icons";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./NavBar.css";
 
@@ -26,16 +26,17 @@ function NavBar() {
   return (
     <header>
       <div className="nav-title">
-        <h1>artHUB</h1>
-      </div>
-      <FontAwesomeIcon
-        icon={faHamburger}
-        onClick={() => setHamburger(!hamburger)}
-      />
+          <h1>artHUB</h1>
+        </div>
+        <FontAwesomeIcon
+          icon={faBars}
+          onClick={() => setHamburger(!hamburger)}
+        />
       <nav
         className="nav-container"
         style={{ display: visible || hamburger ? "flex" : "none" }}
       >
+        
         <ul className="nav-links">
           <li>
             <Link to="/">Home</Link>

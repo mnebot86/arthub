@@ -6,12 +6,13 @@ a {
 a:hover {
   color: red;
 }
-.fa-hamburger {
+.fa-bars {
   display: none;
 }
 
 header {
   background: white;
+  border-bottom: 2px solid black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -20,7 +21,6 @@ header {
 .nav-container {
   align-items: center;
   background-color: white;
-  border-bottom: 2px solid black;
   display: flex;
   flex-wrap: nowrap;
   justify-content: flex-end;
@@ -31,15 +31,14 @@ header {
   font-size: 30px;
   justify-content: flex-end;
   list-style-type: none;
-  
 }
 
 .nav-title {
   font-size: 17px;
-  padding-left: 20px;
+  padding-left: 10px;
 }
 
-li{
+li {
   padding-right: 50px;
 }
 
@@ -50,11 +49,9 @@ li{
   .nav-links {
     font-size: 25px;
   }
-  
 }
 
-@media only Screen and (max-width: 900px){
-
+@media only Screen and (max-width: 900px) {
   li {
     padding-right: 14px;
   }
@@ -73,15 +70,16 @@ li{
   }
   .nav-links {
     font-size: 12px;
-  }
+    flex-direction: column;
+    overflow:visible;
+    }
   .nav-title {
-    font-size:12px;
+    font-size: 12px;
     padding: 0 5px;
   }
-  .fa-hamburger {
+  .fa-bars {
     display: inline;
+    margin-right: 10px;
   }
-  
-  
-}
 
+}

@@ -18,6 +18,8 @@ const Share = (props) => {
       artist,
       image: url,
       type: category,
+      views: 0,
+      likes: 0,
     };
     await axios.post(`${baseURL}/gallery`, { fields: newArt }, config);
     props.setToggleFetch((curr) => !curr);

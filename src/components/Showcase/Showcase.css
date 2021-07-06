@@ -1,4 +1,4 @@
-.card {
+/* .card {
   height: fit-content;
   grid-area: image;
   margin: 2.79vh 0 0 0px;
@@ -52,12 +52,10 @@
   grid-area: window;
   height: 60vh;
   /* justify-content: space-between; */
-  margin: 10vh 0 0 0;
-  overflow-x: scroll;
-  width: 25vw;
-}
+  
+/* } */
 
-em {
+/* em {
   color: black;
 }
 
@@ -160,9 +158,9 @@ strong {
     color: white;
     font-size: 18px;
     /* text-align: center; */
-    margin: 5px auto;
-    width: 30%;
-  }
+    /* margin: 5px auto;
+    width: 30%; */
+  /* }
 
   #comment-window > p {
     width: 30vw;
@@ -238,5 +236,5 @@ strong {
       "image"
       "window"
       "form ";
-  }
-}
+  } 
+}  */
