@@ -9,7 +9,7 @@ import Photo from "./components/Photo/Photo";
 import Film from "./components/Film/Film";
 import Showcase from "./components/Showcase/Showcase";
 import Share from "./components/Share/Share";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 function App() {
