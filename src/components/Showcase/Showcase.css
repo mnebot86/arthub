@@ -16,7 +16,7 @@
   flex-direction: column;
   margin-top: 0.5vh;
   padding: 0 20vh;
-  }
+}
 
 #comment-form input {
   border: 2px solid black;
@@ -79,7 +79,7 @@ li {
   display: flex;
   font-size: 40px;
   justify-content: space-between;
-  margin:0 auto;
+  margin: 0 auto;
   max-width: 75%;
   max-height: 75%;
 }
@@ -89,14 +89,14 @@ li {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
-  " .       .      .   ."
-  " image image window window"
-  " image image form form"
-  " image image . .";
+    " .       .      .   ."
+    " image image window window"
+    " image image form form"
+    " image image . .";
   height: 100vh;
   padding: 20px;
   width: 100vw;
-} 
+}
 
 .showcase-container img {
   border-radius: 8px;
@@ -111,7 +111,20 @@ li {
   border: 2px solid black;
 }
 
-.showcase-container h3, p {
+.showcase-container iframe {
+  border-radius: 8px;
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
+    0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
+    0 16px 32px rgba(0, 0, 0, 0.07), 0 32px 264px rgba(0, 0, 0, 0.07);
+  margin: 0 auto;
+  max-width: 100%;
+  border: 2px solid black;
+}
+
+.showcase-container h3,
+p {
   font-size: 30px;
   margin: 30px;
   width: fit-content;
@@ -121,22 +134,23 @@ strong {
   color: royalblue;
 }
 
-@media only screen and (max-width: 1600){
+@media only screen and (max-width: 1600) {
   .showcase-container img {
     width: 80%;
     height: 80;
   }
 
   #comment-window {
-    margin-top:30vh;
+    margin-top: 30vh;
     width: 100vw;
   }
-  
-} 
+}
 
 @media only screen and (max-width: 900px) {
   .card {
+    margin: 0 auto;
     text-align: center;
+    width:40vw;
   }
 
   #comment-form {
@@ -144,7 +158,7 @@ strong {
     margin: 0.5vh auto;
     width: 40vw;
     justify-content: center;
-    padding:0;
+    padding: 0;
   }
 
   #comment-form input {
@@ -160,9 +174,9 @@ strong {
     border-radius: 6px;
     color: white;
     font-size: 18px;
-    text-align: center; 
+    text-align: center;
     margin: 5px auto;
-    width: 30%
+    width: 30%;
   }
 
   #comment-window > p {
@@ -170,7 +184,7 @@ strong {
   }
 
   #comment-window {
-    margin: 3vh auto 0 auto;
+    margin: 0 auto;
     width: 40vw;
   }
 
@@ -182,11 +196,13 @@ strong {
   .showcase-container {
     display: grid;
     flex-direction: column;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     height: 30vh;
     grid-template-areas:
-      "image window"
-      "image form";
+      "image"
+      "window"
+      "form";
+    justify-content: flex-start;
   }
 }
 
@@ -202,13 +218,13 @@ strong {
     grid-area: form;
     margin: 0.5vh;
     width: 95vw;
-    padding:0;
+    padding: 0;
   }
 
   #comment-form input {
     border: 2px solid black;
-    font-size:1rem;
-    margin:0;
+    font-size: 1rem;
+    margin: 0;
   }
 
   #comment-form button {
@@ -235,7 +251,7 @@ strong {
     background-color: inherit;
     border: none;
     margin: 0 5px;
-    width: 45px;
+    width: 40px;
     height: auto;
   }
 
@@ -251,20 +267,18 @@ strong {
       "image"
       "window"
       "form";
-      margin:0 auto;
-    
-  } 
+    justify-content: flex-start;
+    margin: 0 auto;
+  }
 
-  .showcase-container h3, p {
+  .showcase-container h3,
+  p {
     font-size: 20px;
     margin: 15px;
-  }
-  #comment-window {
   }
 
   #comment-form button {
     margin: 5px auto;
     width: 50%;
   }
-  
-} 
+}

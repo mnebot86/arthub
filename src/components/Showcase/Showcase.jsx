@@ -31,7 +31,7 @@ const Showcase = (props) => {
     };
 
     updateViews();
-  }, [galleries, params.id, setToggleFetch, viewed, gallery.fields.views]);
+  }, [galleries, params.id, setToggleFetch, viewed, gallery?.fields?.views]);
 
   const handleClick = async () => {
     // Listen for onClick on Like button and increments it by one. Updates AirTable with axios.patch. Then re-renders.
