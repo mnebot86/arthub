@@ -3,9 +3,9 @@ import './Film.css';
 
 const Film = (props) => {
   return (
-    <div className="film-container">
+    <div>
       <Link to={`/showcase/${props.gallery.id}`}>
-        <iframe src={props.gallery.fields.video} title="selected film" allow="fullscreen"></iframe>
+        <iframe id="film" src={props.gallery.fields.video} title="selected film" allow="fullscreen"></iframe>
         <p className="film-text">Click Here For More</p>
       </Link>
     </div>

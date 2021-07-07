@@ -7,7 +7,7 @@ import Home from "./components/Home/Home";
 import Art from "./components/Art/Art";
 import Photo from "./components/Photo/Photo";
 import Film from "./components/Film/Film";
-import Showcase from "./components/Showcase/Showcase"
+import Showcase from "./components/Showcase/Showcase";
 import Share from "./components/Share/Share";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
@@ -61,7 +61,7 @@ function App() {
         </div>
       </Route>
       <Route path="/photo">
-        <div className="art-container">
+        <div className="photo-container">
           {galleries
             .filter((gallery) => gallery.fields.type === "photo")
             .map((gallery) => (
@@ -74,7 +74,7 @@ function App() {
         </div>
       </Route>
       <Route path="/film">
-        <div className="art-container">
+        <div className="film-container">
           {galleries
             .filter((gallery) => gallery.fields.type === "film")
             .map((gallery) => (
@@ -87,7 +87,9 @@ function App() {
         </div>
       </Route>
       <Route path="/share/:id">
-        <Share galleries={galleries} setToggleFetch={setToggleFetch} />
+        <div className="share-container">
+          <Share galleries={galleries} setToggleFetch={setToggleFetch} />
+        </div>
       </Route>
       <Route path="/showcase/:id">
         <Showcase galleries={galleries} setToggleFetch={setToggleFetch} />

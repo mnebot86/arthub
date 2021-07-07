@@ -3,9 +3,9 @@ import "./Photo.css"
 
 const Photo = (props) => {
   return (
-    <div className="art">
+    <div>
       <Link to={`/showcase/${props.gallery.id}`}>
-      <img src={props.gallery.fields.image} alt="beautiful"/>
+      <img id="photo-img" src={props.gallery.fields.image} alt="beautiful"/>
       </Link>
     </div>
   );

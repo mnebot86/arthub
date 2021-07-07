@@ -1,4 +1,4 @@
-/* .card {
+.card {
   height: fit-content;
   grid-area: image;
   margin: 2.79vh 0 0 0px;
@@ -15,13 +15,13 @@
   grid-area: form;
   flex-direction: column;
   margin-top: 0.5vh;
-  width: 25vw;
-}
+  padding: 0 20vh;
+  }
 
 #comment-form input {
   border: 2px solid black;
   font-size: 1rem;
-  margin: 1vh auto;
+  margin: 1vh 20;
   text-align: center;
 }
 
@@ -42,7 +42,7 @@
   justify-content: center;
   margin: 1vh auto;
   padding: 5px;
-  width: 20vw;
+  width: 60vh;
 }
 #comment-window {
   border: 3px solid black;
@@ -51,11 +51,10 @@
   flex-direction: column;
   grid-area: window;
   height: 60vh;
-  /* justify-content: space-between; */
-  
-/* } */
+  text-align: center;
+}
 
-/* em {
+em {
   color: black;
 }
 
@@ -86,15 +85,18 @@ li {
 }
 
 .showcase-container {
-  width: 100vw;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(2, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(4, 1fr);
   grid-template-areas:
-    "image image image image window window"
-    "image image image image   form form";
+  " .       .      .   ."
+  " image image window window"
+  " image image form form"
+  " image image . .";
   height: 100vh;
-}
+  padding: 20px;
+  width: 100vw;
+} 
 
 .showcase-container img {
   border-radius: 8px;
@@ -109,7 +111,7 @@ li {
   border: 2px solid black;
 }
 
-.showcase-container h3 {
+.showcase-container h3, p {
   font-size: 30px;
   margin: 30px;
   width: fit-content;
@@ -130,7 +132,7 @@ strong {
     width: 100vw;
   }
   
-}
+} 
 
 @media only screen and (max-width: 900px) {
   .card {
@@ -142,6 +144,7 @@ strong {
     margin: 0.5vh auto;
     width: 40vw;
     justify-content: center;
+    padding:0;
   }
 
   #comment-form input {
@@ -157,10 +160,10 @@ strong {
     border-radius: 6px;
     color: white;
     font-size: 18px;
-    /* text-align: center; */
-    /* margin: 5px auto;
-    width: 30%; */
-  /* }
+    text-align: center; 
+    margin: 5px auto;
+    width: 30%
+  }
 
   #comment-window > p {
     width: 30vw;
@@ -189,21 +192,25 @@ strong {
 
 @media only screen and (max-width: 600px) {
   .card {
-    text-align: center;
+    width: 100vw;
+    text-align: left;
+    margin: 0;
+    padding: 0;
   }
 
   #comment-form {
     grid-area: form;
     margin: 0.5vh;
     width: 95vw;
+    padding:0;
   }
 
   #comment-form input {
     border: 2px solid black;
-    font-size: 1rem;
-    margin: 1vh auto;
-    text-align: center;
+    font-size:1rem;
+    margin:0;
   }
+
   #comment-form button {
     background-color: royalblue;
     border: 2px solid black;
@@ -211,7 +218,7 @@ strong {
     color: white;
     font-size: 18px;
     margin: 5px auto;
-    width: 30%;
+    width: 20%;
   }
 
   #comment-window > p {
@@ -219,13 +226,21 @@ strong {
   }
 
   #comment-window {
-    padding: 20px;
-    margin: 3vh auto 0 auto;
+    padding: 0px;
+    margin: 0;
     width: 95vw;
   }
 
+  #logo {
+    background-color: inherit;
+    border: none;
+    margin: 0 5px;
+    width: 45px;
+    height: auto;
+  }
+
   .logo-container {
-    justify-content: center;
+    text-align: left;
     margin: 0 auto;
   }
 
@@ -235,6 +250,21 @@ strong {
     grid-template-areas:
       "image"
       "window"
-      "form ";
+      "form";
+      margin:0 auto;
+    
   } 
-}  */
+
+  .showcase-container h3, p {
+    font-size: 20px;
+    margin: 15px;
+  }
+  #comment-window {
+  }
+
+  #comment-form button {
+    margin: 5px auto;
+    width: 50%;
+  }
+  
+} 

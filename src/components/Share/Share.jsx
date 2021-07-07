@@ -8,6 +8,7 @@ const Share = (props) => {
   const [title, setTitle] = useState("");
   const [artist, setArtist] = useState("");
   const [url, setURL] = useState("");
+  const [video, setVideo] = useState("")
   const [category, setCategory] = useState("");
   const history = useHistory();
 
@@ -17,6 +18,7 @@ const Share = (props) => {
       title,
       artist,
       image: url,
+      video,
       type: category,
       views: 0,
       likes: 0,
@@ -50,24 +52,23 @@ const Share = (props) => {
 
       <input
         className="share"
-        placeholder="URL"
+        placeholder="Image URL"
         type="url"
         id="url"
         value={url}
         onChange={(e) => setURL(e.target.value)}
       />
 
-      {/* <select className="share" value={category} onSelect={(e) => setCategory(e.target.value)}>
-        <option value={category} onChange={() => setCategory('art')}>
-          art
-        </option>
-        <option value={category} onSelect={(e) => setCategory(e.target.value)}>
-          photo
-        </option>
-        <option value={category} onSelect={(e) => setCategory(e.target.value)}>
-          film
-        </option>
-      </select> */}
+<input
+        className="share"
+        placeholder="Video Embedded URL"
+        type="url"
+        id="url"
+        value={video}
+        onChange={(e) => setVideo(e.target.value)}
+      />
+
+      
       <input className='share'
         type="text"
         style={{textTransform: "lowercase"}}

@@ -4,9 +4,12 @@ import React from "react";
 const Home = () => {
   return (
     <article>
+      <div className="article-wrap">
+
       <h1 className="article-title">
         Welcome To The Hub!
       </h1>
+      <br />
       <p className="article-context">
         Arthub is place for the creatives, the wonderers , imaginative, and the
         dreamers. Here you can share your artworks, photographs, and film
@@ -16,6 +19,7 @@ const Home = () => {
         strong and welcoming community. Feel free to post, like and comment on
         each others art work!
       </p>
+      </div>
     
     </article>
   );
