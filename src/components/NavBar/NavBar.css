@@ -11,7 +11,6 @@ a:hover {
 }
 
 header {
-  position:sticky;
   background: white;
   border-bottom: 2px solid black;
   display: flex;
@@ -29,58 +28,59 @@ header {
 
 .nav-links {
   display: flex;
-  font-size: 30px;
+  font-size: 2rem;
   justify-content: flex-end;
   list-style-type: none;
 }
 
 .nav-title {
-  font-size: 17px;
-  padding-left: 10px;
+  font-size: 1.7rem;
+  padding-left: 1rem;
 }
 
 li {
-  padding-right: 50px;
+  padding-right: 2rem;
 }
 
 @media only screen and (max-width: 1600px) {
   li {
-    padding-right: 14px;
+    padding-right: 1rem;
   }
+
   .nav-links {
-    font-size: 25px;
+    font-size: 2rem;
   }
 }
 
-@media only Screen and (max-width: 900px) {
+@media only screen and (max-width: 900px) {
   li {
-    padding-right: 3px;
+    padding-right: .5rem;
   }
   .nav-links {
-    font-size: 15px;
+    font-size: 1.6rem;
   }
   .nav-title {
-    font-size: 20px;
-    padding: 0 9px;
+    font-size: 1.6rem;
+    padding: 0 .9rem;
   }
 }
 
 @media only screen and (max-width: 400px) {
   li {
-    padding-right: 7px;
+    padding-right: 1rem;
   }
   .nav-links {
-    font-size: 12px;
+    font-size: 1.3rem;
     flex-direction: column;
-    overflow:visible;
-    }
+    overflow: visible;
+  }
   .nav-title {
-    font-size: 12px;
-    padding: 0 5px;
+    font-size: 1.2rem;
+    padding: 0 .5rem;
   }
   .fa-bars {
+    font-size: 1.8rem;
     display: inline;
-    margin-right: 10px;
+    margin-right: 1rem;
   }
-
 }
