@@ -1,9 +1,9 @@
 .card {
   height: fit-content;
   grid-area: image;
-  margin: 2.79vh 0 0 0px;
+  margin: 2% 0 0 0px;
   text-align: center;
-  padding-left: 2.09vh;
+  padding-left: 2%;
   width: fit-content;
 }
 
@@ -14,14 +14,14 @@
   display: flex;
   grid-area: form;
   flex-direction: column;
-  margin-top: 0.5vh;
+  margin-top: 1%;
   padding: 0 20vh;
 }
 
 #comment-form input {
   border: 2px solid black;
   font-size: 1rem;
-  margin: 1vh 20;
+  margin: 2% 20;
   text-align: center;
 }
 
@@ -30,19 +30,19 @@
   border: 2px solid black;
   border-radius: 6px;
   color: white;
-  font-size: 18px;
-  margin: 5px auto;
+  font-size: 1.5rem;
+  margin: 5% auto;
   width: 30%;
 }
 
 #comment-window > p {
   background-color: lightgray;
   border-radius: 6px;
-  font-size: 1rem;
+  font-size: 1.8rem;
   justify-content: center;
-  margin: 1vh auto;
-  padding: 5px;
-  width: 60vh;
+  margin: 2% auto;
+  padding: .5rem;
+  width: 60%;
 }
 #comment-window {
   border: 3px solid black;
@@ -63,21 +63,21 @@ em {
 }
 
 li {
-  margin: 0 5px;
+  margin: 0 2%;
   list-style-type: none;
 }
 
 #logo {
   background-color: inherit;
   border: none;
-  margin: 0 5px;
-  width: 50px;
+  margin: 0 .5rem;
+  width: 5rem;
   height: auto;
 }
 
 .logo-container {
   display: flex;
-  font-size: 40px;
+  font-size: 4rem;
   justify-content: space-between;
   margin: 0 auto;
   max-width: 75%;
